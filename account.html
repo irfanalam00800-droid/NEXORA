@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="NEXORA User Account"
+    >
+
+    <title>NEXORA | Account</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         BACKGROUND
+    ========================== -->
+
+    <div class="background">
+
+        <div class="glow glow-1"></div>
+        <div class="glow glow-2"></div>
+        <div class="grid"></div>
+
+    </div>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <header>
+
+        <nav>
+
+            <a
+                href="index.html"
+                class="logo"
+            >
+                NEXORA<span>.</span>
+            </a>
+
+
+            <a
+                href="index.html"
+                class="menu-btn"
+                aria-label="Back to Home"
+            >
+                ←
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         ACCOUNT
+    ========================== -->
+
+    <main>
+
+        <section class="login-section">
+
+            <div class="auth-container">
+
+                <div class="auth-card">
+
+
+                    <!-- PROFILE PICTURE -->
+
+                    <div
+                        id="accountPicture"
+                        style="
+                            width: 90px;
+                            height: 90px;
+                            margin: 0 auto 18px;
+                            border-radius: 50%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 42px;
+                            background: rgba(139, 92, 246, 0.15);
+                            border: 2px solid rgba(139, 92, 246, 0.6);
+                            overflow: hidden;
+                        "
+                    >
+                        👤
+                    </div>
+
+
+                    <h1>
+                        My Account
+                    </h1>
+
+
+                    <p class="auth-subtitle">
+                        Your NEXORA profile
+                    </p>
+
+
+                    <!-- NAME -->
+
+                    <div class="input-group">
+
+                        <label>
+                            Full Name
+                        </label>
+
+                        <div id="accountName">
+                            Loading...
+                        </div>
+
+                    </div>
+
+
+                    <!-- EMAIL -->
+
+                    <div class="input-group">
+
+                        <label>
+                            Email
+                        </label>
+
+                        <div id="accountEmail">
+                            Loading...
+                        </div>
+
+                    </div>
+
+
+                    <!-- STATUS -->
+
+                    <div class="input-group">
+
+                        <label>
+                            Account Status
+                        </label>
+
+                        <div id="accountStatus">
+                            Demo Account
+                        </div>
+
+                    </div>
+
+
+                    <!-- EDIT BUTTON -->
+
+                    <button
+                        type="button"
+                        class="auth-btn"
+                        id="editAccountBtn"
+                    >
+                        ✏️ Edit Details
+                    </button>
+
+
+                    <!-- EDIT FORM -->
+
+                    <div
+                        id="editAccountForm"
+                        style="
+                            display: none;
+                            margin-top: 20px;
+                        "
+                    >
+
+
+                        <!-- NAME -->
+
+                        <div class="input-group">
+
+                            <label for="editName">
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="editName"
+                                placeholder="Enter your name"
+                            >
+
+                        </div>
+
+
+                        <!-- EMAIL - NOT EDITABLE -->
+
+                        <div class="input-group">
+
+                            <label>
+                                Email
+                            </label>
+
+                            <div id="editEmail">
+                                Loading...
+                            </div>
+
+                        </div>
+
+
+                        <!-- PASSWORD -->
+
+                        <div class="input-group">
+
+                            <label for="editPassword">
+                                New Password
+                            </label>
+
+                            <input
+                                type="password"
+                                id="editPassword"
+                                placeholder="Leave blank to keep current password"
+                            >
+
+                        </div>
+
+
+                        <!-- PROFILE PICTURE -->
+
+                        <div class="input-group">
+
+                            <label for="editPicture">
+                                Profile Picture
+                            </label>
+
+                            <input
+                                type="file"
+                                id="editPicture"
+                                accept="image/*"
+                            >
+
+                        </div>
+
+
+                        <!-- SAVE -->
+
+                        <button
+                            type="button"
+                            class="auth-btn"
+                            id="saveAccountBtn"
+                        >
+                            💾 Save Changes
+                        </button>
+
+                    </div>
+
+
+                    <!-- BACK -->
+
+                    <a
+                        href="index.html"
+                        class="auth-btn"
+                        style="
+                            display: block;
+                            text-align: center;
+                            text-decoration: none;
+                            margin-top: 12px;
+                        "
+                    >
+                        ← Back to Home
+                    </a>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="logo">
+            NEXORA<span>.</span>
+        </div>
+
+        <p>
+            © 2026 NEXORA. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

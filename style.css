@@ -1,0 +1,1169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #050509;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    background: #050509;
+}
+
+.glow {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.35;
+}
+
+.glow-1 {
+    background: #7c3aed;
+    top: 10%;
+    left: -100px;
+}
+
+.glow-2 {
+    background: #2563eb;
+    right: -100px;
+    bottom: 10%;
+}
+
+.grid {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,0.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.035) 1px,
+            transparent 1px
+        );
+
+    background-size: 45px 45px;
+
+    mask-image: linear-gradient(
+        to bottom,
+        black,
+        transparent 90%
+    );
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    padding: 20px 7%;
+
+    background: rgba(5,5,9,0.72);
+
+    backdrop-filter: blur(18px);
+
+    border-bottom: 1px solid
+        rgba(255,255,255,0.06);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #fff;
+    text-decoration: none;
+
+    font-size: 25px;
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #8b5cf6;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #aaa;
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #fff;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 120px 7% 80px;
+}
+
+.badge,
+.section-tag {
+    display: inline-block;
+
+    color: #b9a2ff;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    padding: 9px 16px;
+
+    border: 1px solid
+        rgba(139,92,246,0.4);
+
+    border-radius: 50px;
+
+    background:
+        rgba(139,92,246,0.08);
+
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size:
+        clamp(48px, 11vw, 100px);
+
+    line-height: 0.95;
+
+    font-weight: 900;
+
+    letter-spacing: -4px;
+}
+
+.hero h1 span,
+.section h2 span {
+    background: linear-gradient(
+        90deg,
+        #8b5cf6,
+        #38bdf8
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    color: transparent;
+}
+
+.hero-text {
+    max-width: 650px;
+
+    color: #999;
+
+    line-height: 1.8;
+
+    font-size: 17px;
+
+    margin: 28px 0;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    display: inline-block;
+
+    padding: 15px 25px;
+
+    border-radius: 12px;
+
+    border: none;
+
+    background: linear-gradient(
+        90deg,
+        #7c3aed,
+        #2563eb
+    );
+
+    color: #fff;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.35s;
+
+    box-shadow:
+        0 10px 30px
+        rgba(124,58,237,0.2);
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 40px
+        rgba(124,58,237,0.45);
+}
+
+.btn-outline {
+    background:
+        rgba(255,255,255,0.03);
+
+    border: 1px solid
+        rgba(255,255,255,0.15);
+}
+
+.scroll-text {
+    margin-top: 80px;
+
+    color: #555;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+    min-height: 80vh;
+
+    padding: 120px 7%;
+
+    text-align: center;
+}
+
+.section h2 {
+    font-size:
+        clamp(35px, 6vw, 60px);
+
+    line-height: 1.1;
+
+    margin-bottom: 20px;
+}
+
+.section-description {
+    max-width: 650px;
+
+    margin: auto;
+
+    color: #999;
+
+    line-height: 1.8;
+}
+
+/* =========================
+   TOOL CARDS
+========================= */
+
+.cards {
+    max-width: 1100px;
+
+    margin: 55px auto 0;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 20px;
+}
+
+.card {
+    position: relative;
+
+    padding: 35px 25px;
+
+    border-radius: 22px;
+
+    background:
+        rgba(255,255,255,0.045);
+
+    border: 1px solid
+        rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(15px);
+
+    transition: 0.4s;
+
+    overflow: hidden;
+}
+
+.card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 150px;
+    height: 150px;
+
+    background: #8b5cf6;
+
+    filter: blur(90px);
+
+    opacity: 0;
+
+    top: -70px;
+    right: -70px;
+
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+
+    border-color:
+        rgba(139,92,246,0.5);
+
+    box-shadow:
+        0 20px 60px
+        rgba(0,0,0,0.45);
+}
+
+.card:hover::before {
+    opacity: 0.4;
+}
+
+.card-icon {
+    font-size: 35px;
+
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    margin-bottom: 12px;
+
+    font-size: 20px;
+}
+
+.card p {
+    color: #888;
+
+    line-height: 1.6;
+
+    font-size: 14px;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+/* ==================================================
+   NEXORA AUTHENTICATION
+================================================== */
+
+.login-section {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    padding-top: 140px;
+    padding-bottom: 140px;
+
+    position: relative;
+}
+
+/* AUTH CONTAINER */
+
+.auth-container {
+    width: 100%;
+    max-width: 1050px;
+
+    margin: 55px auto 0;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 0;
+
+    position: relative;
+
+    padding: 35px;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(124,58,237,0.10),
+            rgba(37,99,235,0.06)
+        );
+
+    border: 1px solid
+        rgba(139,92,246,0.45);
+
+    backdrop-filter: blur(25px);
+
+    box-shadow:
+        0 0 60px
+        rgba(124,58,237,0.12),
+
+        inset 0 0 40px
+        rgba(255,255,255,0.02);
+}
+
+/* CENTER DIVIDER */
+
+.auth-container::before {
+    content: "";
+
+    position: absolute;
+
+    top: 35px;
+    bottom: 35px;
+
+    left: 50%;
+
+    width: 1px;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(139,92,246,0.5),
+            transparent
+        );
+}
+
+/* AUTH CARD */
+
+.auth-card {
+    width: 100%;
+
+    padding: 25px 45px;
+
+    text-align: left;
+
+    position: relative;
+}
+
+/* ICON */
+
+.auth-icon {
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-size: 27px;
+
+    background:
+        rgba(124,58,237,0.10);
+
+    border: 1px solid
+        rgba(139,92,246,0.6);
+
+    box-shadow:
+        0 0 30px
+        rgba(124,58,237,0.25);
+}
+
+/* AUTH HEADING */
+
+.auth-card h3 {
+    text-align: center;
+
+    font-size: 28px;
+
+    margin-bottom: 8px;
+}
+
+.auth-subtitle {
+    text-align: center;
+
+    color: #888;
+
+    font-size: 14px;
+
+    margin-bottom: 30px;
+}
+
+/* INPUT GROUP */
+
+.input-group {
+    width: 100%;
+
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    display: block;
+
+    color: #ddd;
+
+    font-size: 13px;
+
+    margin-bottom: 8px;
+}
+
+/* INPUT */
+
+.input-group input {
+    width: 100%;
+
+    height: 52px;
+
+    padding: 0 16px;
+
+    border-radius: 12px;
+
+    border: 1px solid
+        rgba(255,255,255,0.12);
+
+    outline: none;
+
+    background:
+        rgba(255,255,255,0.045);
+
+    color: #fff;
+
+    font-size: 15px;
+
+    transition: 0.3s;
+}
+
+.input-group input::placeholder {
+    color: #666;
+}
+
+.input-group input:focus {
+    border-color:
+        rgba(139,92,246,0.8);
+
+    background:
+        rgba(139,92,246,0.06);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(139,92,246,0.08),
+
+        0 0 25px
+        rgba(124,58,237,0.12);
+}
+
+/* AUTH BUTTON */
+
+.auth-btn {
+    width: 100%;
+
+    height: 52px;
+
+    margin-top: 5px;
+
+    font-size: 15px;
+}
+
+/* FORGOT PASSWORD */
+
+.forgot-link {
+    display: block;
+
+    text-align: center;
+
+    margin-top: 17px;
+
+    color: #9b6cff;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    transition: 0.3s;
+}
+
+.forgot-link:hover {
+    color: #38bdf8;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 40px 7%;
+
+    border-top: 1px solid
+        rgba(255,255,255,0.08);
+
+    text-align: center;
+
+    color: #666;
+}
+
+footer .logo {
+    margin-bottom: 12px;
+}
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+.menu-btn {
+    display: none;
+
+    background: transparent;
+
+    border: 1px solid
+        rgba(255,255,255,0.15);
+
+    color: white;
+
+    font-size: 22px;
+
+    padding: 7px 11px;
+
+    border-radius: 10px;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(40px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+body {
+    transition: opacity 0.5s ease;
+}
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 850px) {
+
+    .auth-container {
+        max-width: 700px;
+
+        grid-template-columns: 1fr;
+
+        padding: 25px;
+    }
+
+    .auth-container::before {
+        display: none;
+    }
+
+    .auth-card {
+        padding: 30px 25px;
+    }
+
+    .auth-card + .auth-card {
+        border-top: 1px solid
+            rgba(139,92,246,0.18);
+
+        margin-top: 15px;
+
+        padding-top: 45px;
+    }
+}
+
+/* ==================================================
+   PHONE
+================================================== */
+
+@media (max-width: 700px) {
+
+    header {
+        padding: 18px 5%;
+    }
+
+    nav {
+        position: relative;
+    }
+
+    .menu-btn {
+        display: block;
+
+        cursor: pointer;
+    }
+
+    .nav-links {
+        position: absolute;
+
+        top: 60px;
+        right: 0;
+
+        width: 190px;
+
+        padding: 15px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 5px;
+
+        background:
+            rgba(10,10,18,0.96);
+
+        backdrop-filter: blur(20px);
+
+        border: 1px solid
+            rgba(255,255,255,0.1);
+
+        border-radius: 15px;
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        transform:
+            translateY(-10px);
+
+        transition: 0.3s;
+    }
+
+    .nav-links.active {
+        opacity: 1;
+
+        visibility: visible;
+
+        transform:
+            translateY(0);
+    }
+
+    .nav-links a {
+        padding: 12px;
+
+        border-radius: 8px;
+    }
+
+    .nav-links a:hover {
+        background:
+            rgba(139,92,246,0.15);
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    /* HERO */
+
+    .hero {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+
+        letter-spacing: -2px;
+    }
+
+    .hero-text {
+        font-size: 15px;
+    }
+
+    .buttons {
+        flex-direction: column;
+
+        width: 100%;
+
+        max-width: 280px;
+    }
+
+    .btn {
+        text-align: center;
+    }
+
+    /* SECTIONS */
+
+    .section {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .section h2 {
+        font-size: 36px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    /* AUTH */
+
+    .login-section {
+        padding-top: 120px;
+        padding-bottom: 100px;
+    }
+
+    .login-section h2 {
+        max-width: 360px;
+    }
+
+    .login-section .section-description {
+        font-size: 14px;
+
+        max-width: 340px;
+    }
+
+    .auth-container {
+        width: 100%;
+
+        margin-top: 35px;
+
+        padding: 18px;
+
+        border-radius: 22px;
+    }
+
+    .auth-card {
+        padding: 22px 8px;
+    }
+
+    .auth-card h3 {
+        font-size: 25px;
+    }
+
+    .auth-subtitle {
+        font-size: 13px;
+
+        margin-bottom: 25px;
+    }
+
+    .input-group input {
+        height: 54px;
+
+        font-size: 16px;
+    }
+
+    .auth-btn {
+        height: 54px;
+
+        font-size: 16px;
+    }
+}
+
+/* ==================================================
+   SMALL PHONE
+================================================== */
+
+@media (max-width: 380px) {
+
+    .hero h1 {
+        font-size: 44px;
+    }
+
+    .section h2 {
+        font-size: 31px;
+    }
+
+    .auth-container {
+        padding: 12px;
+    }
+
+    .auth-card {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .auth-card h3 {
+        font-size: 23px;
+    }
+}
+/* =========================
+   FORGOT PASSWORD MODAL
+========================= */
+
+.forgot-modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 2000;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        rgba(0, 0, 0, 0.72);
+
+    backdrop-filter: blur(12px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: 0.3s ease;
+}
+
+.forgot-modal.active {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+.forgot-box {
+    position: relative;
+
+    width: 100%;
+    max-width: 430px;
+
+    padding: 38px 30px;
+
+    text-align: center;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(25,18,45,0.96),
+            rgba(8,15,35,0.96)
+        );
+
+    border: 1px solid
+        rgba(139,92,246,0.45);
+
+    box-shadow:
+        0 0 60px
+        rgba(124,58,237,0.25),
+
+        inset 0 0 30px
+        rgba(255,255,255,0.025);
+
+    transform: translateY(20px) scale(0.96);
+
+    transition: 0.3s ease;
+}
+
+.forgot-modal.active .forgot-box {
+    transform: translateY(0) scale(1);
+}
+
+.forgot-close {
+    position: absolute;
+
+    top: 15px;
+    right: 15px;
+
+    width: 36px;
+    height: 36px;
+
+    border-radius: 50%;
+
+    border: 1px solid
+        rgba(255,255,255,0.12);
+
+    background:
+        rgba(255,255,255,0.05);
+
+    color: #aaa;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.forgot-close:hover {
+    color: #fff;
+
+    border-color:
+        rgba(139,92,246,0.6);
+
+    background:
+        rgba(139,92,246,0.15);
+}
+
+.forgot-icon {
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-size: 28px;
+
+    background:
+        rgba(124,58,237,0.12);
+
+    border: 1px solid
+        rgba(139,92,246,0.5);
+
+    box-shadow:
+        0 0 30px
+        rgba(124,58,237,0.2);
+}
+
+.forgot-box h3 {
+    font-size: 27px;
+
+    margin-bottom: 10px;
+}
+
+.forgot-box p {
+    color: #888;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    margin-bottom: 25px;
+}
+
+.forgot-box input {
+    width: 100%;
+
+    height: 54px;
+
+    padding: 0 16px;
+
+    border-radius: 12px;
+
+    border: 1px solid
+        rgba(255,255,255,0.12);
+
+    outline: none;
+
+    background:
+        rgba(255,255,255,0.045);
+
+    color: #fff;
+
+    font-size: 15px;
+
+    margin-bottom: 15px;
+
+    transition: 0.3s;
+}
+
+.forgot-box input::placeholder {
+    color: #666;
+}
+
+.forgot-box input:focus {
+    border-color:
+        rgba(139,92,246,0.8);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(139,92,246,0.08);
+}
+
+.forgot-submit {
+    width: 100%;
+
+    height: 52px;
+
+    border: none;
+}
+
+#resetMessage {
+    display: block;
+
+    margin-top: 15px;
+
+    color: #8b5cf6;
+
+    font-size: 13px;
+}
+
+@media (max-width: 500px) {
+
+    .forgot-box {
+        padding: 32px 22px;
+    }
+
+    .forgot-box h3 {
+        font-size: 24px;
+    }
+}
